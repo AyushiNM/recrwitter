@@ -36,13 +36,13 @@ azure-functions/Publish
 *.Cache
 project.lock.json
 
-azure-functions//packages
-azure-functions//TestResults
+/azure-functions/packages
+/azure-functions/TestResults
 
-azure-functions//tools/NuGet.exe
-azure-functions//App_Data
-azure-functions//secrets
-azure-functions//data
+/azure-functions/tools/NuGet.exe
+/azure-functions/App_Data
+/azure-functions/secrets
+/azure-functions/data
 azure-functions/.secrets
 azure-functions/appsettings.json
 azure-functions/local.settings.json
@@ -64,6 +64,6 @@ azure-functions/venv.bak/
 
 # Byte-compiled / optimized / DLL files
 azure-functions/__pycache__/
-azure-functions/*.py[cod]
-azure-functions/*$py.class
+*.py[cod]
+*$py.class
 azure-functions/recrwitter.zip
