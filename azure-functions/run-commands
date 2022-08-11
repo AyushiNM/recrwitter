@@ -1,0 +1,11 @@
+--All the commands relative to azure-functions folder
+
+-- To freeze the dependencies
+pip freeze > requirement.txt
+
+-- To Install the dependencies to no-build release 
+
+pip install -r requirements.txt --target=./.python_packages/lib/site-packages
+
+-- To Deploy to function APP
+func azure functionapp publish func-recrwitter-01 --no-build --publish-local-settings -i

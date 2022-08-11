@@ -21,7 +21,12 @@ def main(mytimer: func.TimerRequest) -> None:
     api = TwitterAPI(Constant.BEARER_TOKEN.value)
     cosmosdb = db(Constant.CONNECTION_STRING.value)
 
-    raw_tweets = api.recent_job_search(DomainQuery.BACKEND.value, int(Constant.MAX_RESULTS.value))
-    tweets = utility.processed_tweets(raw_tweets, Domain.BACKEND.value)
+    tweets = []
+    domains = list(Domain)
+    for domain in domains:
+        logging.info(f"Fetching tweets for domain: {domain}")
+        raw_tweets = api.recent_job_search(DomainQuery[domain.name].value, int(Constant.MAX_RESULTS.value))
+        tweets += utility.processed_tweets(raw_tweets, domain.value)
+
     ids = cosmosdb.insert_documents('tweets', tweets)
     logging.info('Data inserted into the collection')

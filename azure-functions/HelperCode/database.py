@@ -1,6 +1,7 @@
 import getpass
 import pymongo
 import logging
+from bson.json_util import dumps
 class CosmosDB:
 
     def __init__(self, connection_string, db_name="recrwitter-db"):
@@ -23,6 +24,14 @@ class CosmosDB:
 
     def read_document(self, collection, document_id):
         return self.client[collection].find_one({"_id": document_id})
+    
+    def read_documents(self, collection, filters, max_results=100):
+        try:
+            data = self.client[collection].find(filters).limit(max_results)
+            return dumps(list(data))
+        except Exception as e:
+            logging.error(f"Error Occured {e}")
+            return []
 
     def update_document(self, collection, document_id, updated_document):
         self.client[collection].update_one({"_id": document_id}, {"$set": updated_document})
