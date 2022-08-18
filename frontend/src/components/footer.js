@@ -7,8 +7,12 @@ const Footer = () => {
     <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-4">
+                        
                         <p class="g-font-size-13--xs g-margin-b-0--xs g-color--white-opacity">
-                            © 2022 Recrwitter</p>
+                            <a href="/" class="g-margin-r-10--xs">
+                                <img class="s-header-v2__logo-img s-header-v2__logo-img" src="/logo-sm.png" alt="logo" height="28" />
+                            </a>
+                            Recrwitter</p>
                     </div>
                     <div class="col-xs-12 col-sm-4">
                         <p class="g-font-size-13--xs g-text-center--md g-margin-b-0--xs g-color--white-opacity">

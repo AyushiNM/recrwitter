@@ -35,8 +35,18 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info(filters)
     try:
         documents = cosmosdb.read_documents('tweets', filters, max_results)
+        domains = cosmosdb.read_documents('domain', {}, 1000)
+        company = cosmosdb.read_documents('company', {}, 1000)
+        location = cosmosdb.read_documents('location', {}, 1000)
+        response = {
+            "tweets": json.dumps(documents),
+            "companies": json.dumps(company),
+            "locations": json.dumps(location),
+            "domains": json.dumps(domains)
+        }
+
         return func.HttpResponse(
-            json.dumps(documents),
+            json.dumps(response),
             mimetype='application/json',
             status_code=200
         )
@@ -45,4 +55,3 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
              f"Internal Error Occured: {e}",
              status_code=500
         )
-        

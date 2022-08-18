@@ -1,0 +1,26 @@
+.home{
+    background: url('../img/background.png');
+    background-size: cover
+}
+
+.home-black{
+    background: url('../img/background-dark.png');
+    background-size: cover
+}
+
+.home-domain{
+    border: 1px solid #efefef;
+}
+
+.home-domain:hover{
+    border: 1px solid #ddd;
+}
+.filter-list{
+    max-height: 240px;
+    overflow-y: auto;
+}
+.filter-list-item{
+    list-style: none;
+    text-transform: capitalize;
+    font-size: 14px;
+}

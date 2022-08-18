@@ -16,17 +16,25 @@ const Header = () => {
                         <div class="s-header-v2__navbar-col s-header-v2__navbar-col-width--130">
                             <div class="s-header-v2__logo">
                                 <a href="/" class="s-header-v2__logo-link">
-                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--default" src="/logo.png" alt="logo" height="32" />
-                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--shrink" src="/logo.png" alt="logo" height="32" />
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--default" src="/logo.png" alt="logo" height="36" />
+                                    <img class="s-header-v2__logo-img s-header-v2__logo-img--shrink" src="/logo-sm.png" alt="logo" height="32" />
                                 </a>
                             </div>
                         </div>
-                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--right" style={{marginRight: 0}}>
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--left" style={{marginRight: 0}}>
                             <div class="collapse navbar-collapse s-header-v2__navbar-collapse" id="nav-collapse">
                                 <ul class="s-header-v2__nav">
-                                    <li class="s-header-v2__nav-item"><a href="/" class="s-header-v2__nav-link">Jobs</a></li>
-                                    <li class="s-header-v2__nav-item"><a href="/about" class="s-header-v2__nav-link">Spaces</a></li>
-                                    <li class="s-header-v2__nav-item"><a href="/store" class="s-header-v2__nav-link">Profiles</a></li>
+                                    <li class="s-header-v2__nav-item"><a href="/jobs" class="s-header-v2__nav-link">Jobs</a></li>
+                                    <li class="s-header-v2__nav-item"><a href="/spaces" class="s-header-v2__nav-link">Spaces</a></li>
+                                    <li class="s-header-v2__nav-item"><a href="/profiles" class="s-header-v2__nav-link">Profiles</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--right" style={{ marginRight: 0 }}>
+                            <div class="collapse navbar-collapse s-header-v2__navbar-collapse" id="nav-collapse">
+                                <ul class="s-header-v2__nav">
+                                    <li class="s-header-v2__nav-item"><a href="/about" class="s-header-v2__nav-link">About</a></li>
+                                    <li class="s-header-v2__nav-item"><a href="/team" class="s-header-v2__nav-link">Team</a></li>
                                 </ul>
                             </div>
                         </div>
