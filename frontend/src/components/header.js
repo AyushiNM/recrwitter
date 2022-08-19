@@ -26,18 +26,12 @@ const Header = () => {
                                 <ul class="s-header-v2__nav">
                                     <li class="s-header-v2__nav-item"><a href="/jobs" class="s-header-v2__nav-link">Jobs</a></li>
                                     <li class="s-header-v2__nav-item"><a href="/spaces" class="s-header-v2__nav-link">Spaces</a></li>
-                                    <li class="s-header-v2__nav-item"><a href="/profiles" class="s-header-v2__nav-link">Profiles</a></li>
+                                    <li className="s-header-v2__nav-item"><a href="/team" class="s-header-v2__nav-link">Team</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="s-header-v2__navbar-col s-header-v2__navbar-col--right" style={{ marginRight: 0 }}>
-                            <div class="collapse navbar-collapse s-header-v2__navbar-collapse" id="nav-collapse">
-                                <ul class="s-header-v2__nav">
-                                    <li class="s-header-v2__nav-item"><a href="/about" class="s-header-v2__nav-link">About</a></li>
-                                    <li class="s-header-v2__nav-item"><a href="/team" class="s-header-v2__nav-link">Team</a></li>
-                                </ul>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </nav>

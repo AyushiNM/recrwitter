@@ -14,11 +14,7 @@ const Footer = () => {
                             </a>
                             Recrwitter</p>
                     </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <p class="g-font-size-13--xs g-text-center--md g-margin-b-0--xs g-color--white-opacity">
-                            Developed By <a class="g-font-size-14--xs g-font-weight--600" href="https://www.linkedin.com/in/sagar-bansal-448097140/">Sagar</a> & <a class="g-font-size-14--xs g-font-weight--600" href="https://www.linkedin.com/in/ayushi-mittal1011/">Ayushi</a>
-                        </p>
-                    </div>
+                    <div class="col-xs-12 col-sm-4"></div>
                     <div class="col-xs-12 col-sm-4">
                         <p class="g-font-size-13--xs g-text-right--md g-margin-b-0--xs g-color--white-opacity">
                             <a class="g-color--white-opacity g-font-size-13--xs" href="/about" target="_blank">About Us</a>

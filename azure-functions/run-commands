@@ -9,3 +9,7 @@ pip install -r requirements.txt --target=./.python_packages/lib/site-packages
 
 -- To Deploy to function APP
 func azure functionapp publish func-recrwitter-01 --no-build --publish-local-settings -i
+
+
+-- To run function locally
+func start --functions GetSpacesHttpTrigger

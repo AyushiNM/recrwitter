@@ -2,10 +2,12 @@ import json
 import requests
 import logging
 
+
 class TwitterAPI:
     def __init__(self, bearer_token):
         self.bearer_token = bearer_token
         self.recent_search_url = "https://api.twitter.com/2/tweets/search/recent"
+        self.space_search_url = "https://api.twitter.com/2/spaces/search"
         self.base_jobs_query = '(context:66.961961812492148736 OR context:66.850073441055133696 OR 67.1486470043353239552) has:links lang:en -RT'
 
     def bearer_oauth(self, r):
@@ -19,12 +21,28 @@ class TwitterAPI:
         logging.info(response.status_code)
         if response.status_code != 200:
             raise Exception(response.status_code, response.text)
-        return response.json() 
+        return response.json()
 
     def recent_job_search(self, query, max_results=10):
-        query_params = {'max_results': max_results, 'query': f'{query} {self.base_jobs_query}', 'tweet.fields': 'created_at,entities'}
+        query_params = {'max_results': max_results,
+                        'query': f'{query} {self.base_jobs_query}', 'tweet.fields': 'created_at,entities'}
         result = self.connect_to_endpoint(self.recent_search_url, query_params)
         if 'data' not in result:
-            raise KeyError("Data is not return by Twitter API")
+            raise KeyError("Tweets Data is not return by Twitter API")
         logging.info('Tweets recieved')
         return result['data']
+
+    def space_search(self, query):
+        query_params = {'query': query,
+                        'space.fields': 'title,created_at,participant_count,scheduled_start,topic_ids,subscriber_count',
+                        'expansions': 'creator_id,speaker_ids',
+                        'topic.fields': 'name',
+                        'user.fields': 'name,profile_image_url,username,verified'
+                        }
+
+        result = self.connect_to_endpoint(
+            self.space_search_url, query_params)
+        if 'data' not in result:
+            raise KeyError("Spaces Data is not return by Twitter API")
+        logging.info('Spaces recieved')
+        return result

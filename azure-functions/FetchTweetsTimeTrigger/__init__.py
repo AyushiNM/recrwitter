@@ -2,7 +2,7 @@ import datetime
 import logging
 
 import azure.functions as func
-from HelperCode.tweetSearch import TwitterAPI
+from HelperCode.tweetAPI import TwitterAPI
 from HelperCode.database import CosmosDB as db
 from HelperCode.constant import Constant
 from HelperCode.domain import Domain, DomainQuery

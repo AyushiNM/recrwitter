@@ -10,7 +10,7 @@ const Jobs = () => {
     const [domains, setDomains] = useState([]);
     const [companies, setCompanies] = useState([]);
     const [locations, setLocations] = useState([]);
-    const [filters, setFilters] = useState({domains: [], companies: [], locations: [], max_results: 10});
+    const [filters, setFilters] = useState({domains: [], companies: [], locations: [], max_results: 20});
     useEffect(() => {
         setLoading(true);
         getTweets().then(async res => {
@@ -41,6 +41,17 @@ const Jobs = () => {
         return axios.get(baseURL + options);
     }
 
+    const updateJobs = async () =>{
+
+        await getTweets().then(res => {
+            if (res.status === 200) {
+                const data = res.data
+                setTweets(JSON.parse(JSON.parse(data['tweets'])));
+                setLoading(false);
+            }
+        });
+    }
+
     const handleFilterChange = async (type, item) => {
         let data = filters[type];
         if (!data.find((name) => name === item.name)) {
@@ -49,15 +60,14 @@ const Jobs = () => {
             filters[type] = data.filter((name) => name !== item.name)
         }
         await setFilters(filters);
-        console.log(filters);
-        await getTweets().then(res => {
-            if (res.status === 200) {
-                const data = res.data
-                setTweets(JSON.parse(JSON.parse(data['tweets'])));
-                setLoading(false);
-            }
-        });
+        await updateJobs();
 
+    }
+
+    const handleMaxResultsChange = async (value) => {
+        filters['max_results'] = value;
+        await setFilters(filters);
+        await updateJobs();
     }
 
     return (<div>
@@ -69,7 +79,16 @@ const Jobs = () => {
                 </div>
 
                 <div className={"row"}>
-                    <div className={"col-md-4"}>
+                    <div className={"col-md-3"}>
+                        <div className="g-margin-b-20--xs">
+                            <select onChange={(e) => handleMaxResultsChange(e.target.value)} className="form-control s-form-v4__input" name="max_results" id="">
+                                <option value="" defaultChecked={true}>Select Max Results</option>
+                                <option value="20">20 Jobs</option>
+                                <option value="50">50 Jobs</option>
+                                <option value="100">100 Jobs</option>
+                                <option value="200">200 Jobs</option>
+                            </select>
+                        </div>
                         <div>
                             <h5 className="g-font-weight--700">Company</h5>
                             <ul className="filter-list g-margin-b-30--xs g-padding-l-10--xs">
@@ -114,7 +133,8 @@ const Jobs = () => {
                         </div>
 
 
-                    </div>
+                </div>
+                <div className={"col-md-1"}></div>
                     <div className={"col-md-8"}>
                         {!loading ? tweets && tweets.length > 0 ? tweets.map(tweet => {
                             return (<TwitterTweetEmbed tweetId={tweet._id}/>)

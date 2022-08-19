@@ -8,11 +8,11 @@ const Home = () => {
                 <div class="row">
                     <div class="col-md-6">
                         <div class="g-margin-b-20--xs">
-                            <h1 class="g-font-size-32--xs g-font-size-45--sm g-font-size-75--md g-font-weight--700 g-color--dark">Find your <br /> Dream Job <br />now</h1>
-                            <p class="g-font-size-18--xs g-font-size-24--sm g-color--dark g-font-weight--700">We pair new Twitter v2 APIs and advanced engineering solutions to help you find your next dream job anywhere.</p>
+                            <h1 class="g-font-size-60--xs g-font-size-65--sm g-font-size-75--md g-font-weight--700 g-color--dark">Find your <br /> Dream Job <br />now</h1>
+                            <p class="g-font-size-22--xs g-font-size-24--sm g-color--dark g-font-weight--700">We pair new Twitter v2 APIs and advanced engineering solutions to help you find your next dream job anywhere.</p>
                         </div>
-                        <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
-                            class="text-uppercase s-btn s-btn--xs s-btn--dark-bg g-radius--50 g-padding-x-30--xs">Explore now</a>
+                        <a href="/jobs"
+                            class="text-uppercase s-btn s-btn--sm s-btn--dark-bg g-radius--50 g-padding-x-30--xs">Explore now</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@ const Home = () => {
                 <div class="col-md-4">
                     <a href="">
                         <div
-                            className="home-domain g-padding-y-20--xs g-padding-x-30--xs g-box-shadow__dark-lightest-v3 g-radius--10">
+                            className="g-margin-b-10--xs home-domain g-padding-y-20--xs g-padding-x-30--xs g-box-shadow__dark-lightest-v3 g-radius--10">
                             <h4 className="g-margin-b-0--xs"><b>Backend Developer</b> <i class="material-icons-outlined">chevron_right</i></h4>
                         </div>
                     </a>
@@ -60,7 +60,7 @@ const Home = () => {
                 <div className="col-md-4">
                     <a href="">
                         <div
-                            className="home-domain g-padding-y-20--xs g-padding-x-30--xs g-box-shadow__dark-lightest-v3 g-radius--10">
+                            className="g-margin-b-10--xs home-domain g-padding-y-20--xs g-padding-x-30--xs g-box-shadow__dark-lightest-v3 g-radius--10">
                             <h4 className="g-margin-b-0--xs"><b>Data Scientist</b> <i
                                 className="material-icons-outlined">chevron_right</i></h4>
                         </div>
@@ -69,7 +69,7 @@ const Home = () => {
                 <div className="col-md-4">
                     <a href="">
                         <div
-                            className="home-domain g-padding-y-20--xs g-padding-x-30--xs g-box-shadow__dark-lightest-v3 g-radius--10">
+                            className="g-margin-b-10--xs home-domain g-padding-y-20--xs g-padding-x-30--xs g-box-shadow__dark-lightest-v3 g-radius--10">
                             <h4 className="g-margin-b-0--xs"><b>Frontend Developer</b> <i
                                 className="material-icons-outlined">chevron_right</i></h4>
                         </div>
